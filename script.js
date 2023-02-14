@@ -45,11 +45,14 @@ $("document").ready(function () {
         iloscsurowcow = ((15 * 60) * 5) * procentarz;
         wynik.innerHTML = iloscsurowcow.toFixed(0);
         wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+        break;
+      case "10x5min":
         // prettier-ignore
         iloscsurowcow = ((5 * 60) * 10) * procentarz;
         wynik.innerHTML = iloscsurowcow.toFixed(0);
         wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
         break;
+
       case "10x10min":
         // prettier-ignore
         iloscsurowcow = ((10 * 60) * 10) * procentarz;
