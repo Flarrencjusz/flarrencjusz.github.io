@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>GENBOOST Kalk</title>
+  </head>
+  <body>
+    <div class="container bg-custom">
+      <h1 class="text-center header1">SKYGEN UTILS</h1>
+      <div class="d-flex justify-content-center font-weight-bold">
+        <label class="text-center wybgen" for="boosttype">GENBOOST:</label>
+        <select name="boosts" class="selectboost" id="boosttype">
+          <option value="2x5min">2x na 5 minut</option>
+          <option value="2x15min">2x na 15 minut</option>
+          <option value="5x5min">5x na 5 minut</option>
+          <option value="5x15min">5x na 15 minut</option>
+          <option value="10x5min">10x na 5 minut</option>
+          <option value="10x10min">10x na 10 minut</option>
+          <option value="20x5min">20x na 5 minut</option>
+          <option value="20x10min">20x na 10 minut</option>
+          <option value="30x5min">30x na 5 minut</option>
+          <option value="30x10min">30x na 10 minut</option>
+        </select>
+      </div>
+      <div class="d-flex justify-content-center">
+        <fieldset>
+          <form action="">
+            <label class="graczstyle" for="gracz">GRACZ</label>
+            <input
+              type="radio"
+              name="typrangi"
+              id="gracz"
+              value="GRACZ"
+            /><br />
+            <label class="vipstyle" for="VIP">VIP</label>
+            <input type="radio" name="typrangi" id="VIP" value="VIP" /><br />
+            <label class="svipstyle" for="SVIP">SVIP</label>
+            <input type="radio" name="typrangi" id="SVIP" value="SVIP" /><br />
+            <label class="mvipstyle" for="MVIP">MVIP</label>
+            <input type="radio" name="typrangi" id="MVIP" value="MVIP" />
+          </form>
+        </fieldset>
+      </div>
+      <div class="d-flex justify-content-center flex-column">
+        <span class="prewynik">Ilość surowca, którą zbierzesz:</span>
+        <span id="wynik"></span>
+        <br />
+        <span id="wynikutw"></span>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-danger text-center htu">
+          <strong
+            >Aby ponownie obliczyć wynik, wybierz na chwile inną range jako iż
+            obliczenie jest wykonywane przy wykryciu zmiany typu rangi</strong
+          >
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
