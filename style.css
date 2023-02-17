@@ -4,31 +4,25 @@ body {
 
 body {
   background-repeat: no-repeat;
-  background-size: auto;
   font-family: sans-serif;
 }
 
 @media screen and (max-width: 640px) {
   body {
     background-image: url("images/bg-tall.jpg");
+    background-size: auto;
   }
   .wybgen {
     font-size: 5vw;
   }
-  fieldset {
+  .rankfieldset {
     width: 45%;
-    font-size: 3vw;
-    padding-left: 7.5%;
-    padding-right: 7.5%;
-    padding-top: 7.5%;
-  }
-  label {
-    margin-bottom: 2.5vh;
-    font-size: 4vw;
+    font-size: 5vw;
+    font-size: 8vw;
+    text-align: center;
   }
   input[type="radio"] {
-    margin-top: 0.75vh;
-    transform: scale(2);
+    display: none;
   }
   .selectboost {
     font-size: 3vw;
@@ -46,16 +40,24 @@ body {
     font-size: 4vw;
   }
   .credit {
-    font-size: 2vw;
+    font-size: 4vw;
   }
   .jhufo {
-    font-size: 2vw;
+    font-size: 4vw;
+  }
+  .rankfieldset label:hover {
+    transform: scale(1.1);
+  }
+
+  .rankfieldset input[type="radio"]:checked + label {
+    transform: scale(1.1);
   }
 }
 
 @media screen and (min-width: 640px) {
   body {
     background-image: url("images/bg.jpg");
+    background-size: cover;
   }
   .wybgen {
     font-size: 3.5vh;
@@ -64,22 +66,34 @@ body {
     margin-top: 1vh;
     font-size: 2vh;
   }
-  fieldset {
-    width: 30%;
+  .rankfieldset {
+    width: 12vw;
     font-size: 2.5vw;
-    padding-left: 5%;
-    padding-right: 5%;
+    text-align: center;
   }
   input[type="radio"] {
-    margin-top: 12.5%;
-    transform: scale(3);
+    display: none;
   }
   .htu {
     width: 30%;
+    font-size: 140%;
   }
   .wynikdiv {
     font-size: 2vw;
   }
+  .credit {
+    font-size: 1vw;
+  }
+  .rankfieldset label:hover {
+    transform: scale(1.2);
+  }
+  .rankfieldset input[type="radio"]:checked + label {
+    transform: scale(1.2);
+  }
+}
+
+input[name="typrangi"] {
+  visibility: hidden;
 }
 
 .header1 {
@@ -100,6 +114,7 @@ body {
   text-align: center;
   border-radius: 10px;
   height: auto;
+  word-wrap: normal;
 }
 
 .selectboost {
@@ -118,9 +133,18 @@ select {
   text-align: right;
 }
 
-fieldset {
+.rankfieldset {
   border: 1px solid rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.rankfieldset label {
+  transition: transform 200ms ease-in-out;
+}
+
+.rankfieldset input[type="radio"]:checked + label {
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .graczstyle {
@@ -156,124 +180,22 @@ fieldset {
 
 .credit {
   position: absolute;
-  left: 1%;
+  left: 0;
+  right: 0;
   bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
+  text-align: center;
 }
 
 .jhufo {
   position: absolute;
   right: 1%;
-  bottom: 0;
+  top: 0;
   color: white;
 }
 
-/* fieldset {
-  display: inline-grid;
-  line-height: 1.5;
-  width: 15vw;
-  border: none;
-} */
-
-/* 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-overflow: "";
-  text-align-last: right;
-  padding-right: 0.75vh;
-  direction: rtl;
+.testclass {
+  border: white 1px solid;
 }
-
-.maindiv {
-  width: 100%;
-  height: 100%;
-}
-
-.boostdiv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.boosttypelabel {
-  font-size: 2rem;
-  color: #97efe9;
-  font-weight: bold;
-}
-
-#boosttype {
-  margin-left: 20px;
-  height: 3vh;
-  width: auto;
-  background-color: #a6e800;
-  border: #a6e800 solid 3px;
-  border-radius: 10px;
-  font-size: 1rem;
-}
-
-.rangadiv {
-  margin-top: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-.divwynik {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.prewynik {
-  font-size: 2rem;
-  color: #97efe9;
-}
-
-#wynik {
-  font-size: 2rem;
-  color: #97efe9;
-  margin-left: 1vw;
-}
-
-#wynikutw {
-  font-size: 2rem;
-  color: #97efe9;
-  margin-top: -1vh;
-  text-align: center;
-}
-
-footer {
-  font-size: 1rem;
-  color: red;
-  float: left;
-  position: absolute;
-  top: 96%;
-}
-
-.htudiv {
-  word-wrap: break-word;
-  border: 1px white solid;
-  position: absolute;
-  width: 20rem;
-  height: 20rem;
-}
-
-.jakuzyc {
-  font-size: 1.5rem;
-  color: #fcfcfc;
-}
-
-.credit {
-  font-size: 1rem;
-  color: red;
-  float: right;
-}
-
-.creditdiv {
-  position: fixed;
-  bottom: 1.75vh;
-  right: 1vw;
-} */
