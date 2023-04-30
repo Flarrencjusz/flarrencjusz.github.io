@@ -44,6 +44,9 @@ $("document").ready(function () {
         case "warped":
           spawntime = 2;
           break;
+        case "smoothsandstone":
+          spawntime = 2;
+          break;
         case "barrier":
           spawntime = 0;
           break;
