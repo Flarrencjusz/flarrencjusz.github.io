@@ -102,23 +102,9 @@ $("document").ready(function () {
             wynikutw.innerHTML =
               "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
             break;
-          case "20x10min":
-            // prettier-ignore
-            iloscsurowcow = ((10 * (60/spawntime)) * 20) + ((10 * (60/spawntime) * procentarz) *2);
-            wynik.innerHTML = iloscsurowcow.toFixed(0);
-            wynikutw.innerHTML =
-              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-            break;
           case "30x5min":
             // prettier-ignore
             iloscsurowcow = ((5 * (60/spawntime)) * 30) + ((5 * (60/spawntime) * procentarz) *2);
-            wynik.innerHTML = iloscsurowcow.toFixed(0);
-            wynikutw.innerHTML =
-              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-            break;
-          case "30x10min":
-            // prettier-ignore
-            iloscsurowcow = ((10 * (60/spawntime)) * 30) + ((10 * (60/spawntime) * procentarz) *2);
             wynik.innerHTML = iloscsurowcow.toFixed(0);
             wynikutw.innerHTML =
               "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
