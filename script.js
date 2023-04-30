@@ -1,88 +1,130 @@
 $("document").ready(function () {
-  $("input[type=radio][name='typrangi']").change(function () {
-    let typrangi = this.value;
+  $("input[type=radio][name='surowiec']").change(function () {
+    let typsurowca = this.value;
+    let typrangi;
+    if ($("input[type=radio][name='typrangi']").is(":checked")) {
+      typrangi = $("input[type=radio][name='typrangi']:checked").val();
+    }
+    let spawntime = 1;
     let typboosta = $("#boosttype").val();
     let iloscsurowcow;
-    console.log(typrangi);
     var procentarz;
-    switch (typrangi) {
-      case "GRACZ":
-        procentarz = 1;
-        break;
-      case "VIP":
-        procentarz = 1.15;
-        break;
-      case "SVIP":
-        procentarz = 1.3;
-        break;
-      case "MVIP":
-        procentarz = 1.5;
-        break;
-      case "LOVE":
-        procentarz = 1.6;
-    }
-    switch (typboosta) {
-      case "2x5min":
-        // prettier-ignore
-        iloscsurowcow = ((5 * 60) * 2) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "2x15min":
-        // prettier-ignore
-        iloscsurowcow = ((15 * 60) * 2) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "5x5min":
-        // prettier-ignore
-        iloscsurowcow = ((5 * 60) * 5) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "5x15min":
-        // prettier-ignore
-        iloscsurowcow = ((15 * 60) * 5) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "10x5min":
-        // prettier-ignore
-        iloscsurowcow = ((5 * 60) * 10) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
+    if (typrangi == null) {
+      wynik.innerHTML = "Wybierz rangę!";
+    } else {
+      switch (typrangi) {
+        case "GRACZ":
+          procentarz = 0;
+          break;
+        case "VIP":
+          procentarz = 0.15;
+          break;
+        case "SVIP":
+          procentarz = 0.3;
+          break;
+        case "MVIP":
+          procentarz = 0.5;
+          break;
+        case "LOVE":
+          procentarz = 0.6;
+      }
+      switch (typsurowca) {
+        case "iron":
+          spawntime = 1.5;
+          break;
+        case "coal":
+          spawntime = 1.5;
+          break;
+        case "gold":
+          spawntime = 1.5;
+          break;
+        case "diamond":
+          spawntime = 1.5;
+          break;
+        case "warped":
+          spawntime = 2;
+          break;
+        case "barrier":
+          spawntime = 0;
+          break;
+      }
+      if (spawntime == 0) {
+        wynik.innerHTML = "Dany blok zostanie w najbliższym czasie dodany!";
+      } else {
+        switch (typboosta) {
+          case "2x5min":
+            // prettier-ignore
+            iloscsurowcow = ((5 * (60/spawntime)) * 2) + ((5 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "2x15min":
+            // prettier-ignore
+            iloscsurowcow = ((15 * (60/spawntime)) * 2) + ((15 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "5x5min":
+            // prettier-ignore
+            iloscsurowcow = ((5 * (60/spawntime)) * 5) + ((5 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "5x15min":
+            // prettier-ignore
+            iloscsurowcow = ((15 * (60/spawntime)) * 5) + ((15 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "10x5min":
+            // prettier-ignore
+            iloscsurowcow = ((5 * (60/spawntime)) * 10) + ((5 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
 
-      case "10x10min":
-        // prettier-ignore
-        iloscsurowcow = ((10 * 60) * 10) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "20x5min":
-        // prettier-ignore
-        iloscsurowcow = ((5 * 60) * 20) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "20x10min":
-        // prettier-ignore
-        iloscsurowcow = ((10 * 60) * 20) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "30x5min":
-        // prettier-ignore
-        iloscsurowcow = ((5 * 60) * 30) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
-      case "30x10min":
-        // prettier-ignore
-        iloscsurowcow = ((10 * 60) * 30) * procentarz;
-        wynik.innerHTML = iloscsurowcow.toFixed(0);
-        wynikutw.innerHTML = "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
-        break;
+          case "10x10min":
+            // prettier-ignore
+            iloscsurowcow = ((10 * (60/spawntime)) * 10) + ((10 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "20x5min":
+            // prettier-ignore
+            iloscsurowcow = ((5 * (60/spawntime)) * 20) + ((5 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "20x10min":
+            // prettier-ignore
+            iloscsurowcow = ((10 * (60/spawntime)) * 20) + ((10 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "30x5min":
+            // prettier-ignore
+            iloscsurowcow = ((5 * (60/spawntime)) * 30) + ((5 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+          case "30x10min":
+            // prettier-ignore
+            iloscsurowcow = ((10 * (60/spawntime)) * 30) + ((10 * (60/spawntime) * procentarz) *2);
+            wynik.innerHTML = iloscsurowcow.toFixed(0);
+            wynikutw.innerHTML =
+              "Utwardzone: " + (iloscsurowcow / 64).toFixed(1);
+            break;
+        }
+      }
     }
   });
 });

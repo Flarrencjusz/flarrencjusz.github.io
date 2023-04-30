@@ -16,10 +16,11 @@ body {
     font-size: 5vw;
   }
   .rankfieldset {
-    width: 45%;
+    width: 55%;
     font-size: 5vw;
     font-size: 8vw;
     text-align: center;
+    margin-bottom: 4%;
   }
   input[type="radio"] {
     display: none;
@@ -35,6 +36,12 @@ body {
     padding-right: 3%;
     padding-top: 1%;
     padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 85%;
+    bottom: 5%;
   }
   .wynikdiv {
     font-size: 4vw;
@@ -44,6 +51,8 @@ body {
   }
   .jhufo {
     font-size: 4vw;
+    text-decoration: none;
+    color: white;
   }
   .rankfieldset label:hover {
     transform: scale(1.1);
@@ -51,6 +60,14 @@ body {
 
   .rankfieldset input[type="radio"]:checked + label {
     transform: scale(1.1);
+  }
+  .surowcediv img {
+    width: 35px;
+    height: auto;
+  }
+  .testclass {
+    padding-left: 7%;
+    padding-right: 7%;
   }
 }
 
@@ -67,16 +84,23 @@ body {
     font-size: 2vh;
   }
   .rankfieldset {
-    width: 12vw;
+    width: 30%;
     font-size: 2.5vw;
     text-align: center;
+    margin-bottom: 2%;
   }
   input[type="radio"] {
     display: none;
   }
   .htu {
     width: 30%;
-    font-size: 140%;
+    font-size: 120%;
+    margin-left: auto;
+    margin-right: auto;
+    left: -68%;
+    right: 0;
+    top: 88%;
+    bottom: 1%;
   }
   .wynikdiv {
     font-size: 2vw;
@@ -90,6 +114,29 @@ body {
   .rankfieldset input[type="radio"]:checked + label {
     transform: scale(1.2);
   }
+  .surowcediv img {
+    width: 70px;
+    height: auto;
+  }
+  .testclass {
+    padding-top: 1%;
+  }
+}
+
+.surowcediv [type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.surowcediv [type="radio"] + img {
+  transition: transform 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.surowcediv [type="radio"]:checked + img {
+  transform: scale(1.3);
 }
 
 input[name="typrangi"] {
@@ -103,14 +150,8 @@ input[name="typrangi"] {
 .htu {
   position: absolute;
   padding-bottom: 4vh;
-  top: 85%;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
-  bottom: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
   text-align: center;
   border-radius: 10px;
   height: auto;
@@ -167,7 +208,7 @@ select {
 }
 
 .lovestyle {
-  color: rgb(255, 14, 175);
+  color: rgb(208, 255, 0);
   font-weight: bold;
 }
 
@@ -196,6 +237,6 @@ select {
   color: white;
 }
 
-.testclass {
-  border: white 1px solid;
-}
+/* .testclass {
+  border: red 1px solid;
+} */
