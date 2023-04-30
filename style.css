@@ -29,7 +29,7 @@ body {
     margin-top: 0.5vh;
   }
   .htu {
-    font-size: 2.5vw;
+    font-size: 72.5%;
     width: 50%;
     padding-left: 3%;
     padding-right: 3%;
@@ -93,12 +93,12 @@ body {
   }
   .htu {
     width: 30%;
-    font-size: 120%;
+    font-size: auto;
     margin-left: auto;
     margin-right: auto;
     left: -68%;
     right: 0;
-    top: 88%;
+    top: 93%;
     bottom: 1%;
   }
   .wynikdiv {
@@ -148,6 +148,7 @@ input[name="typrangi"] {
 
 .htu {
   position: absolute;
+  display: inline-block;
   padding-bottom: 4vh;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
@@ -155,6 +156,7 @@ input[name="typrangi"] {
   border-radius: 10px;
   height: auto;
   word-wrap: normal;
+  vertical-align: middle;
 }
 
 .selectboost {
@@ -234,6 +236,11 @@ select {
   right: 1%;
   top: 0;
   color: white;
+}
+
+#wynik,
+#wynikutw {
+  text-align: center;
 }
 
 /* .testclass {
