@@ -53,6 +53,7 @@ $("document").ready(function () {
       }
       if (spawntime == 0) {
         wynik.innerHTML = "Dany blok zostanie dodany w najbliższym czasie!";
+        wynikutw.innerHTML = "";
       } else {
         switch (typboosta) {
           case "2x5min":
