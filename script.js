@@ -29,23 +29,17 @@ $("document").ready(function () {
           procentarz = 0.6;
       }
       switch (typsurowca) {
-        case "iron":
-          spawntime = 1.5;
-          break;
-        case "coal":
-          spawntime = 1.5;
-          break;
-        case "gold":
-          spawntime = 1.5;
-          break;
         case "diamond":
-          spawntime = 1.5;
+          spawntime = 1.25;
           break;
         case "warped":
-          spawntime = 2;
+          spawntime = 1.5;
           break;
         case "smoothsandstone":
-          spawntime = 2;
+          spawntime = 1.5;
+          break;
+        case "kelp":
+          spawntime = 1.75;
           break;
         case "barrier":
           spawntime = 0;
