@@ -41,6 +41,9 @@ $("document").ready(function () {
         case "kelp":
           spawntime = 1.75;
           break;
+        case "sponge":
+          spawntime = 1.75;
+          break;
         case "barrier":
           spawntime = 0;
           break;
